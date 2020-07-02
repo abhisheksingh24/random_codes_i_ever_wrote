@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+    int n;
+    cin >> n;
+    vector<vector<int> > adj(n);
+    for(int i = 0; i < n - 1; i++){
+        int u, v;
+        cin >> u >> v;
+        u--; v--;
+        adj[u].push_back(v);
+        adj[v].push_back(u);
+    }
+    for(auto v: adj) if(v.size() == 2){
+        cout << "NO" << endl;
+        return 0;
+    }
+    cout << "YES" << endl;
+}

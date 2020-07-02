@@ -1,0 +1,5 @@
+n = int(input())
+A = list(set([int(x) for x in input().split()]))
+A.sort()
+if len(A) == 1: print(0)
+else: print(A[-2])
